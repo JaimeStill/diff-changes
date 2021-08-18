@@ -78,7 +78,7 @@ export class AppService {
     return result;
   }
 
-  isObject = (prop: any) => typeof prop === 'object'
+  isObject = (prop: any) => prop != null && typeof prop === 'object'
     ? true
     : false;
 

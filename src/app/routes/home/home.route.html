@@ -10,7 +10,7 @@
     <section *ngFor="let diff of diffs"
              fxLayout="column"
              fxLayoutAlign="start stretch"
-             class="rounded elevated card-outline-accent m4 p8"
+             class="rounded elevated card-outline-accent m4"
              [style.width.px]="380">
       <section fxLayout="row"
                fxLayoutAlign="space-between center">
@@ -22,35 +22,25 @@
           <mat-icon>code</mat-icon>
         </button>
       </section>
-      <p class="mat-subheading-2 bold m4">Previous</p>
-      <ng-container *ngFor="let prop of app.getProps(diff.previous)">
-        <ng-container *ngIf="app.isObject(prop[1])">
-          <p class="mat-subheading-2 bold m4">{{prop[0]}}</p>
+      <ng-container *ngFor="let c of app.buildGraph(diff)">
+        <section *ngIf="app.isObject(c.previous)">
+          <p class="mat-subheading-2 m4">{{c.key}}</p>
+          <section *ngFor="let prop of app.getProps(c.previous)"
+                   [ngClass]="c.same ? 'color-text' : 'color-red'">
+            <p class="m4"><strong>{{prop[0]}}:</strong> {{prop[1]}}</p>
+          </section>
+          <section *ngFor="let prop of app.getProps(c.proposed)"
+          [ngClass]="c.same ? 'color-text' : 'color-green'">
+            <p class="m4"><strong>{{prop[0]}}:</strong> {{prop[1]}}</p>
+          </section>
+        </section>
+        <section *ngIf="!(app.isObject(c.previous))">
+          <p class="mat-body-strong m4">{{c.key}}</p>
           <p class="m4"
-             *ngFor="let p of app.getProps(prop[1])">
-            <strong>{{p[0]}}</strong>: {{p[1]}}
-          </p>
-        </ng-container>
-        <ng-container *ngIf="!(app.isObject(prop[1])) && app.renderProp(prop[0])">
-          <p class="m4">
-            <strong>{{prop[0]}}</strong>: {{prop[1]}}
-          </p>
-        </ng-container>
-      </ng-container>
-      <p class="mat-subheading-2 bold m4">Proposed</p>
-      <ng-container *ngFor="let prop of app.getProps(diff.proposed)">
-        <ng-container *ngIf="app.isObject(prop[1])">
-          <p class="mat-subheading-2 bold m4">{{prop[0]}}</p>
+             [ngClass]="c.same ? 'color-text' : 'color-red'">{{c.previous}}</p>
           <p class="m4"
-             *ngFor="let p of app.getProps(prop[1])">
-            <strong>{{p[0]}}</strong>: {{p[1]}}
-          </p>
-        </ng-container>
-        <ng-container *ngIf="!(app.isObject(prop[1])) && app.renderProp(prop[0])">
-          <p class="m4">
-            <strong>{{prop[0]}}</strong>: {{prop[1]}}
-          </p>
-        </ng-container>
+             [ngClass]="c.same ? 'color-text' : 'color-green'">{{c.proposed}}</p>
+        </section>
       </ng-container>
     </section>
   </section>

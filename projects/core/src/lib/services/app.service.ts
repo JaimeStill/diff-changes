@@ -16,6 +16,9 @@ export class AppService {
   diffs$ = this.diffs.asObservable();
 
   private reviver = (key: string, value: any) => {
+    if (!(this.renderProp(key)))
+      return;
+
     switch (typeof value) {
       case 'number':
       case 'boolean':
@@ -23,13 +26,63 @@ export class AppService {
       case 'object':
         return value;
       default:
-        return null;
+        return;
     }
   }
 
-  getDiffs = () => this.diffs.next(this.db.getDiffs());
+  private renderProp = (key: string) => key.length > 2 && key.endsWith('Id')
+    ? false
+    : true;
+
+  private getValueFromKey = (key: string, entries: [string, any][]) => {
+    const entry = entries.find(prop => prop[0] === key)
+
+    return entry
+      ? entry[1]
+      : null;
+  }
+
+  private compare = (a: any, b: any) => {
+    if (this.isObject(a) && this.isObject(b))
+      return JSON.stringify(a) === JSON.stringify(b)
+    else
+      return a === b;
+  }
 
   parseValue = (value: string): Object => JSON.parse(value, this.reviver);
+
+  getProps = (value: string | object) => {
+    if (typeof value === 'string')
+      value = this.parseValue(value);
+
+    return Object.entries(value);
+  }
+
+  buildGraph = (diff: Diff) => {
+    const previous = this.getProps(diff.previous);
+    const proposed = this.getProps(diff.proposed);
+    const result = new Array<{ key: string, previous: any, proposed: any, same: boolean }>();
+
+    for (const prop of previous) {
+      const preVal = prop[1];
+      const proVal = this.getValueFromKey(prop[0], proposed);
+
+      result.push({
+        key: prop[0],
+        previous: preVal,
+        proposed: proVal,
+        same: this.compare(preVal, proVal)
+      })
+    }
+
+    return result;
+  }
+
+  isObject = (prop: any) => typeof prop === 'object'
+    ? true
+    : false;
+
+  getDiffs = () => this.diffs.next(this.db.getDiffs());
 }
 
 class Database {

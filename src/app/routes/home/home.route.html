@@ -1,4 +1,3 @@
-<p class="mat-title bold m8">Diffs</p>
 <ng-template #loading>
   <mat-progress-bar mode="indeterminate"
                     color="accent"></mat-progress-bar>
@@ -16,7 +15,7 @@
       <section fxLayout="row"
                fxLayoutAlign="space-between center">
         <span fxFlex
-              class="mat-body-strong m4">{{diff.id}}</span>
+              class="mat-title bold m4">Diff</span>
         <button mat-icon-button
                 color="primary"
                 (click)="testParse(diff)">
@@ -24,15 +23,30 @@
         </button>
       </section>
       <p class="mat-subheading-2 bold m4">Previous</p>
-      <ng-container *ngFor="let prop of getEntries(diff.previous)">
-        <ng-container *ngIf="isObject(prop[1])">
+      <ng-container *ngFor="let prop of app.getProps(diff.previous)">
+        <ng-container *ngIf="app.isObject(prop[1])">
           <p class="mat-subheading-2 bold m4">{{prop[0]}}</p>
           <p class="m4"
-             *ngFor="let p of getEntries(prop[1])">
+             *ngFor="let p of app.getProps(prop[1])">
             <strong>{{p[0]}}</strong>: {{p[1]}}
           </p>
         </ng-container>
-        <ng-container *ngIf="!(isObject(prop[1])) && shouldRender(prop[0])">
+        <ng-container *ngIf="!(app.isObject(prop[1])) && app.renderProp(prop[0])">
+          <p class="m4">
+            <strong>{{prop[0]}}</strong>: {{prop[1]}}
+          </p>
+        </ng-container>
+      </ng-container>
+      <p class="mat-subheading-2 bold m4">Proposed</p>
+      <ng-container *ngFor="let prop of app.getProps(diff.proposed)">
+        <ng-container *ngIf="app.isObject(prop[1])">
+          <p class="mat-subheading-2 bold m4">{{prop[0]}}</p>
+          <p class="m4"
+             *ngFor="let p of app.getProps(prop[1])">
+            <strong>{{p[0]}}</strong>: {{p[1]}}
+          </p>
+        </ng-container>
+        <ng-container *ngIf="!(app.isObject(prop[1])) && app.renderProp(prop[0])">
           <p class="m4">
             <strong>{{prop[0]}}</strong>: {{prop[1]}}
           </p>

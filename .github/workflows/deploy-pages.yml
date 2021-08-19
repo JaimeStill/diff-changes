@@ -25,6 +25,12 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: yarn install
-    - run: yarn build:core
-    - run: yarn deploy
+    - run: |
+        yarn install
+        yarn build:core
+        yarn deploy
+    - name: Save Build as Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: docs
+        path: docs

@@ -921,7 +921,7 @@ function HomeRoute_ng_container_2_section_1_section_1_ng_container_7_section_1_s
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](child_r13.key);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", child_r13.same ? "color.text" : "color-red");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", child_r13.same ? "color.text" : "background-pink");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](child_r13.previous);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -982,7 +982,7 @@ function HomeRoute_ng_container_2_section_1_section_1_ng_container_7_section_2_T
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](node_r9.key);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", node_r9.same ? "color-text" : "color-red");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngClass", node_r9.same ? "background-default" : "background-pink");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](node_r9.previous);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -1104,7 +1104,7 @@ HomeRoute.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
   selectors: [["home-route"]],
   decls: 4,
   vars: 4,
-  consts: [["loading", ""], [4, "ngIf", "ngIfElse"], ["mode", "indeterminate", "color", "accent"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start start", "class", "p8", 4, "ngIf"], ["class", "mat-subheading-2 m4", 4, "ngIf"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start start", 1, "p8"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", "class", "rounded elevated card-outline-accent m4", 3, "width", 4, "ngFor", "ngForOf"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "rounded", "elevated", "card-outline-accent", "m4"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], ["fxFlex", "", 1, "mat-title", "bold", "m4"], ["mat-icon-button", "", "color", "primary", 3, "click"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "mat-subheading-2", "m4"], [1, "mat-body-strong", "m4"], ["fxLayout", "row | wrap", "fxLayoutAlign", "space-between center"], [1, "m4", 3, "ngClass"], ["class", "m4 color-green", 4, "ngIf"], [1, "m4", "color-green"]],
+  consts: [["loading", ""], [4, "ngIf", "ngIfElse"], ["mode", "indeterminate", "color", "accent"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start start", "class", "p8", 4, "ngIf"], ["class", "mat-subheading-2 m4", 4, "ngIf"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start start", 1, "p8"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", "class", "rounded elevated card-outline-accent m4", 3, "width", 4, "ngFor", "ngForOf"], ["fxLayout", "column", "fxLayoutAlign", "start stretch", 1, "rounded", "elevated", "card-outline-accent", "m4"], ["fxLayout", "row", "fxLayoutAlign", "space-between center"], ["fxFlex", "", 1, "mat-title", "bold", "m4"], ["mat-icon-button", "", "color", "primary", 3, "click"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [1, "mat-subheading-2", "m4"], [1, "mat-body-strong", "m4"], ["fxLayout", "row | wrap", "fxLayoutAlign", "space-between center", 1, "p8"], [3, "ngClass"], ["class", "background-green", 4, "ngIf"], [1, "background-green"]],
   template: function HomeRoute_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, HomeRoute_ng_template_0_Template, 1, 0, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);

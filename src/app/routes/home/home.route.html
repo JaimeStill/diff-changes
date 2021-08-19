@@ -11,7 +11,7 @@
              fxLayout="column"
              fxLayoutAlign="start stretch"
              class="rounded elevated card-outline-accent m4"
-             [style.width.px]="380">
+             [style.width.px]="500">
       <section fxLayout="row"
                fxLayoutAlign="space-between center">
         <span fxFlex
@@ -24,22 +24,27 @@
       </section>
       <ng-container *ngFor="let node of app.buildGraph(diff.previous, diff.proposed)">
         <section *ngIf="node.isObject">
-          <p class="mat-subheading-2 m4"
-             [ngClass]="node.same ? 'color-text' : 'color-primary'">{{node.key}}</p>
+          <p class="mat-subheading-2 m4">{{node.key}}</p>
           <section *ngFor="let child of node.values">
             <p class="mat-body-strong m4">{{child.key}}</p>
-            <p class="m4"
-               [ngClass]="child.same ? 'color.text' : 'color-red'">{{child.previous}}</p>
-            <p *ngIf="!(child.same)"
-               class="m4 color-green">{{child.proposed}}</p>
+            <section fxLayout="row | wrap"
+                     fxLayoutAlign="space-between center">
+              <p class="m4"
+                 [ngClass]="child.same ? 'color.text' : 'color-red'">{{child.previous}}</p>
+              <p *ngIf="!(child.same)"
+                 class="m4 color-green">{{child.proposed}}</p>
+            </section>
           </section>
         </section>
         <section *ngIf="!(node.isObject)">
           <p class="mat-body-strong m4">{{node.key}}</p>
-          <p class="m4"
-             [ngClass]="node.same ? 'color-text' : 'color-red'">{{node.previous}}</p>
-          <p *ngIf="!(node.same)"
-             class="m4 color-green">{{node.proposed}}</p>
+          <section fxLayout="row | wrap"
+                   fxLayoutAlign="space-between center">
+            <p class="m4"
+               [ngClass]="node.same ? 'color-text' : 'color-red'">{{node.previous}}</p>
+            <p *ngIf="!(node.same)"
+               class="m4 color-green">{{node.proposed}}</p>
+          </section>
         </section>
       </ng-container>
     </section>

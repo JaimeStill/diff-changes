@@ -1,0 +1,19 @@
+<section fxLayout="column"
+         fxLayoutAlign="start stretch"
+         class="rounded elevated background-card card-outline-accent m4"
+         [style.width.px]="500">
+  <section fxLayout="row"
+           fxLayoutAlign="space-between center">
+    <span fxFlex
+          class="mat-title bold m4">{{label}}</span>
+    <button mat-icon-button
+            [class]="actionClass"
+            (click)="action.emit(diff)">
+      <mat-icon>{{actionIcon}}</mat-icon>
+    </button>
+  </section>
+  <prop-node *ngFor="let node of app.buildGraph(diff?.previous, diff?.proposed)"
+             [node]="node"
+             [preClass]="preClass"
+             [proClass]="proClass"></prop-node>
+</section>

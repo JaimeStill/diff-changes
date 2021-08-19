@@ -25,7 +25,7 @@
       <ng-container *ngFor="let node of app.buildGraph(diff.previous, diff.proposed)">
         <section *ngIf="node.isObject">
           <p class="mat-subheading-2 m4"
-             [ngClass]="node.same ? 'color-text' : 'color-primary'">{{c.key}}</p>
+             [ngClass]="node.same ? 'color-text' : 'color-primary'">{{node.key}}</p>
           <section *ngFor="let child of node.values">
             <p class="mat-body-strong m4">{{child.key}}</p>
             <p class="m4"
@@ -37,7 +37,7 @@
         <section *ngIf="!(node.isObject)">
           <p class="mat-body-strong m4">{{node.key}}</p>
           <p class="m4"
-             [ngClass]="c.same ? 'color-text' : 'color-red'">{{node.previous}}</p>
+             [ngClass]="node.same ? 'color-text' : 'color-red'">{{node.previous}}</p>
           <p *ngIf="!(node.same)"
              class="m4 color-green">{{node.proposed}}</p>
         </section>

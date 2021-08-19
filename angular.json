@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "diff-conflict": {
+    "diff-changes": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -47,7 +47,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/diff-conflict",
+            "outputPath": "dist/diff-changes",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -100,15 +100,15 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "diff-conflict:build",
+            "browserTarget": "diff-changes:build",
             "port": 3000
           },
           "configurations": {
             "production": {
-              "browserTarget": "diff-conflict:build:production"
+              "browserTarget": "diff-changes:build:production"
             },
             "development": {
-              "browserTarget": "diff-conflict:build:development"
+              "browserTarget": "diff-changes:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -116,7 +116,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "diff-conflict:build"
+            "browserTarget": "diff-changes:build"
           }
         }
       }
@@ -145,5 +145,5 @@
       }
     }
   },
-  "defaultProject": "diff-conflict"
+  "defaultProject": "diff-changes"
 }

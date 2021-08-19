@@ -28,22 +28,26 @@
           <section *ngFor="let child of node.values">
             <p class="mat-body-strong m4">{{child.key}}</p>
             <section fxLayout="row | wrap"
-                     fxLayoutAlign="space-between center"
-                     class="p8">
-              <p [ngClass]="child.same ? 'color.text' : 'background-pink'">{{child.previous}}</p>
+                     fxLayoutAlign="start center">
+              <p class="p4"
+                 [ngClass]="child.same ? 'color.text' : 'background-red'"
+                 fxFlex>{{child.previous}}</p>
               <p *ngIf="!(child.same)"
-                 class="background-green">{{child.proposed}}</p>
+                 class="p4 background-green"
+                 fxFlex>{{child.proposed}}</p>
             </section>
           </section>
         </section>
         <section *ngIf="!(node.isObject)">
           <p class="mat-body-strong m4">{{node.key}}</p>
           <section fxLayout="row | wrap"
-                   fxLayoutAlign="space-between center"
-                   class="p8">
-            <p [ngClass]="node.same ? 'background-default' : 'background-pink'">{{node.previous}}</p>
+                   fxLayoutAlign="start center">
+            <p class="p4"
+               [ngClass]="node.same ? 'background-default' : 'background-red'"
+               fxFlex>{{node.previous}}</p>
             <p *ngIf="!(node.same)"
-               class="background-green">{{node.proposed}}</p>
+               class="p4 background-green"
+               fxFlex>{{node.proposed}}</p>
           </section>
         </section>
       </ng-container>

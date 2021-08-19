@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import {
   Category,
   Diff,
+  PropNode,
   Task
 } from '../models';
 
@@ -58,21 +59,33 @@ export class AppService {
     return Object.entries(value);
   }
 
-  buildGraph = (diff: Diff) => {
-    const previous = this.getProps(diff.previous);
-    const proposed = this.getProps(diff.proposed);
-    const result = new Array<{ key: string, previous: any, proposed: any, same: boolean }>();
+  buildGraph = (previous: string | object, proposed: string | object) => {
+    const previousProps = this.getProps(previous);
+    const proposedProps = this.getProps(proposed);
+    const result = new Array<PropNode>();
 
-    for (const prop of previous) {
+    for (const prop of previousProps) {
       const preVal = prop[1];
-      const proVal = this.getValueFromKey(prop[0], proposed);
+      const proVal = this.getValueFromKey(prop[0], proposedProps);
+      const same = this.compare(preVal, proVal);
+      const isObject = this.isObject(preVal);
 
-      result.push({
-        key: prop[0],
-        previous: preVal,
-        proposed: proVal,
-        same: this.compare(preVal, proVal)
-      })
+      if (isObject) {
+        result.push({
+          key: prop[0],
+          isObject: isObject,
+          values: this.buildGraph(preVal, proVal),
+          same: same
+        })
+      } else {
+        result.push({
+          key: prop[0],
+          previous: preVal,
+          proposed: same ? null : proVal,
+          same: same,
+          isObject: isObject
+        })
+      }
     }
 
     return result;

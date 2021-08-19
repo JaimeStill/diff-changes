@@ -24,13 +24,11 @@
       </section>
       <ng-container *ngFor="let c of app.buildGraph(diff)">
         <section *ngIf="app.isObject(c.previous)">
-          <p class="mat-subheading-2 m4">{{c.key}}</p>
-          <section *ngFor="let prop of app.getProps(c.previous)"
-                   [ngClass]="c.same ? 'color-text' : 'color-red'">
+          <p class="mat-subheading-2 m4" [ngClass]="c.same ? 'color-text' : 'color-primary'">{{c.key}}</p>
+          <section *ngFor="let prop of app.getProps(c.previous)">
             <p class="m4"><strong>{{prop[0]}}:</strong> {{prop[1]}}</p>
           </section>
-          <section *ngFor="let prop of app.getProps(c.proposed)"
-          [ngClass]="c.same ? 'color-text' : 'color-green'">
+          <section *ngFor="let prop of app.getProps(c.proposed)">
             <p class="m4"><strong>{{prop[0]}}:</strong> {{prop[1]}}</p>
           </section>
         </section>

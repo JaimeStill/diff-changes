@@ -8,6 +8,8 @@
            fxLayoutAlign="start start"
            class="p8">
     <diff-card *ngFor="let diff of diffs"
+               preClass="background-pastel-orange"
+               proClass="background-pastel-indigo"
                [diff]="diff"
                (action)="buildGraph($event)"></diff-card>
   </section>

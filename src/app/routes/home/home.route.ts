@@ -21,6 +21,8 @@ export class HomeRoute implements OnInit {
     this.app.getDiffs();
   }
 
+  logDiffs = () => console.log('Raw Diffs', this.app.getRawDiffs());
+
   buildGraph = (event: Diff) => {
     console.log('Diff Graph', this.app.buildGraph(event.previous, event.proposed));
   }

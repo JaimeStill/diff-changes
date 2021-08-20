@@ -96,6 +96,7 @@ export class AppService {
     : false;
 
   getDiffs = () => this.diffs.next(this.db.getDiffs());
+  getRawDiffs = () => this.db.getDiffs();
 }
 
 class Database {

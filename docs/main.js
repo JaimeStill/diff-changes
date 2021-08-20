@@ -156,7 +156,8 @@ function PropNodeComponent_section_0_prop_node_3_Template(rf, ctx) {
 
   if (rf & 2) {
     const prop_r3 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("node", prop_r3);
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("node", prop_r3)("preClass", ctx_r2.preClass)("proClass", ctx_r2.proClass);
   }
 }
 
@@ -166,7 +167,7 @@ function PropNodeComponent_section_0_Template(rf, ctx) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p", 1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, PropNodeComponent_section_0_prop_node_3_Template, 1, 1, "prop-node", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, PropNodeComponent_section_0_prop_node_3_Template, 1, 3, "prop-node", 2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
   }
 
@@ -571,7 +572,7 @@ PropNodeComponent.ɵcmp = /* @__PURE__ */_angular_core__WEBPACK_IMPORTED_MODULE_
   },
   decls: 2,
   vars: 2,
-  consts: [[4, "ngIf"], [1, "mat-subheading-2", "m4"], [3, "node", 4, "ngFor", "ngForOf"], [3, "node"], [1, "mat-body-strong", "m4"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start center"], ["fxFlex", "", 1, "p4", 3, "ngClass"], ["class", "p4", "fxFlex", "", 3, "ngClass", 4, "ngIf"]],
+  consts: [[4, "ngIf"], [1, "mat-subheading-2", "m4"], [3, "node", "preClass", "proClass", 4, "ngFor", "ngForOf"], [3, "node", "preClass", "proClass"], [1, "mat-body-strong", "m4"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start center"], ["fxFlex", "", 1, "p4", 3, "ngClass"], ["class", "p4", "fxFlex", "", 3, "ngClass", 4, "ngIf"]],
   template: function PropNodeComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, PropNodeComponent_section_0_Template, 4, 2, "section", 0);

@@ -1,5 +1,7 @@
 # Diff Changes
 
+> The initial functionality for this feature was written by @aaronjcolclough (esq.). I just helped with optimizing the API and component design.
+
 [![Deploy Pages](https://github.com/JaimeStill/diff-changes/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/JaimeStill/diff-changes/actions/workflows/deploy-pages.yml)
 
 [![image](https://user-images.githubusercontent.com/14102723/130131748-cfb75da3-835a-4b6e-ae0d-69374b4a3faa.png)](https://user-images.githubusercontent.com/14102723/130131748-cfb75da3-835a-4b6e-ae0d-69374b4a3faa.png)

@@ -1,7 +1,9 @@
 <section *ngIf="node?.isObject">
   <p class="mat-subheading-2 m4">{{node?.key}}</p>
   <prop-node *ngFor="let prop of node?.values"
-             [node]="prop"></prop-node>
+             [node]="prop"
+             [preClass]="preClass"
+             [proClass]="proClass"></prop-node>
 </section>
 <section *ngIf="!(node?.isObject)">
   <p class="mat-body-strong m4">{{node?.key}}</p>

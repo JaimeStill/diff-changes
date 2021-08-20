@@ -1236,7 +1236,7 @@ HomeRoute.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
   selectors: [["home-route"]],
   decls: 4,
   vars: 4,
-  consts: [["loading", ""], [4, "ngIf", "ngIfElse"], ["mode", "indeterminate", "color", "accent"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start start", "class", "p8", 4, "ngIf"], ["class", "mat-subheading-2 m4", 4, "ngIf"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start start", 1, "p8"], [3, "diff", "action", 4, "ngFor", "ngForOf"], [3, "diff", "action"], [1, "mat-subheading-2", "m4"]],
+  consts: [["loading", ""], [4, "ngIf", "ngIfElse"], ["mode", "indeterminate", "color", "accent"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start start", "class", "p8", 4, "ngIf"], ["class", "mat-subheading-2 m4", 4, "ngIf"], ["fxLayout", "row | wrap", "fxLayoutAlign", "start start", 1, "p8"], ["preClass", "background-pastel-orange", "proClass", "background-pastel-indigo", 3, "diff", "action", 4, "ngFor", "ngForOf"], ["preClass", "background-pastel-orange", "proClass", "background-pastel-indigo", 3, "diff", "action"], [1, "mat-subheading-2", "m4"]],
   template: function HomeRoute_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, HomeRoute_ng_template_0_Template, 1, 0, "ng-template", null, 0, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
